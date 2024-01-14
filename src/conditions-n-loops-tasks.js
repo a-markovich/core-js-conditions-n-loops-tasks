@@ -21,8 +21,11 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  if (number >= 0) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -38,8 +41,15 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  if (a > b) {
+    if (a > c) {
+      return a;
+    }
+  } else if (b > c) {
+    return b;
+  }
+  return c;
 }
 
 /**
@@ -60,8 +70,17 @@ function getMaxNumber(/* a, b, c */) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  if (queen.x === king.x) {
+    return true;
+  }
+  if (queen.y === king.y) {
+    return true;
+  }
+  if (Math.abs(queen.x - king.x) === Math.abs(queen.y - king.y)) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -82,8 +101,20 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  if (a === 0 || b === 0 || c === 0) {
+    return false;
+  }
+  if (a === b && a + b > c) {
+    return true;
+  }
+  if (a === c && a + c > b) {
+    return true;
+  }
+  if (b === c && b + c > a) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -100,8 +131,130 @@ function isIsoscelesTriangle(/* a, b, c */) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
+function convertToRomanNumerals(num) {
+  let result;
+  switch (num) {
+    case 1:
+      result = 'I';
+      break;
+    case 2:
+      result = 'II';
+      break;
+    case 3:
+      result = 'III';
+      break;
+    case 4:
+      result = 'IV';
+      break;
+    case 5:
+      result = 'V';
+      break;
+    case 6:
+      result = 'VI';
+      break;
+    case 7:
+      result = 'VII';
+      break;
+    case 8:
+      result = 'VIII';
+      break;
+    case 9:
+      result = 'IX';
+      break;
+    case 10:
+      result = 'X';
+      break;
+    case 11:
+      result = 'XI';
+      break;
+    case 12:
+      result = 'XII';
+      break;
+    case 13:
+      result = 'XIII';
+      break;
+    case 14:
+      result = 'XIV';
+      break;
+    case 15:
+      result = 'XV';
+      break;
+    case 16:
+      result = 'XVI';
+      break;
+    case 17:
+      result = 'XVII';
+      break;
+    case 18:
+      result = 'XVIII';
+      break;
+    case 19:
+      result = 'XIX';
+      break;
+    case 20:
+      result = 'XX';
+      break;
+    case 21:
+      result = 'XXI';
+      break;
+    case 22:
+      result = 'XXII';
+      break;
+    case 23:
+      result = 'XXIII';
+      break;
+    case 24:
+      result = 'XXIV';
+      break;
+    case 25:
+      result = 'XXV';
+      break;
+    case 26:
+      result = 'XXVI';
+      break;
+    case 27:
+      result = 'XXVII';
+      break;
+    case 28:
+      result = 'XXVIII';
+      break;
+    case 29:
+      result = 'XXIX';
+      break;
+    case 30:
+      result = 'XXX';
+      break;
+    case 31:
+      result = 'XXXI';
+      break;
+    case 32:
+      result = 'XXXII';
+      break;
+    case 33:
+      result = 'XXXIII';
+      break;
+    case 34:
+      result = 'XXXIV';
+      break;
+    case 35:
+      result = 'XXXV';
+      break;
+    case 36:
+      result = 'XXXVI';
+      break;
+    case 37:
+      result = 'XXXVII';
+      break;
+    case 38:
+      result = 'XXXVIII';
+      break;
+    case 39:
+      result = 'XXXIX';
+      break;
+    default:
+      result = '';
+  }
+  return result;
 }
 
 /**
@@ -119,8 +272,61 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let str = '';
+  let result;
+  for (let i = 0; i < numberStr.length; i += 1) {
+    switch (numberStr[i]) {
+      case '1':
+        result = 'one';
+        break;
+      case '2':
+        result = 'two';
+        break;
+      case '3':
+        result = 'three';
+        break;
+      case '4':
+        result = 'four';
+        break;
+      case '5':
+        result = 'five';
+        break;
+      case '6':
+        result = 'six';
+        break;
+      case '7':
+        result = 'seven';
+        break;
+      case '8':
+        result = 'eight';
+        break;
+      case '9':
+        result = 'nine';
+        break;
+      case '.':
+        result = 'point';
+        break;
+      case ',':
+        result = 'point';
+        break;
+      case '-':
+        result = 'minus';
+        break;
+      case '0':
+        result = 'zero';
+        break;
+      default:
+        result = '';
+    }
+    str = `${str} ${result}`;
+  }
+
+  let resultStr = '';
+  for (let i = 1; i < str.length; i += 1) {
+    resultStr += str[i];
+  }
+  return resultStr;
 }
 
 /**
@@ -149,7 +355,7 @@ function isPalindrome(/* str */) {
  *
  * @example:
  *  'qwerty', 'q'     => 0
- *  'qwerty', 'е'     => 4
+ *  'qwerty', 'е'     => 2
  *  'qwerty', 'Q'     => -1
  *  'qwerty', 'p'     => -1
  */
